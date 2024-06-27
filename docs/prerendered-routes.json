@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/consultar",
+    "/eliminar",
+    "/historial",
+    "/login",
+    "/modificar",
+    "/pagos-pendientes"
+  ]
+}
