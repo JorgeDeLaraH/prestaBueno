@@ -3,6 +3,7 @@ from flask import Flask,jsonify,request
 from flask_cors import CORS, cross_origin
 import BackEnd.Functions as CallMethod
 import BackEnd.GlobalInfo.ResponseMessages as ResponseMessage
+import os
 
 #Instancia
 app=Flask(__name__)
@@ -30,4 +31,5 @@ def after_request(response):
   return response
 
 if __name__=='__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
+    
+    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True, ssl_content='adhoc')
