@@ -5,9 +5,17 @@ import { EliminarPrestamoComponent } from './pages/eliminar-prestamo/eliminar-pr
 import { HistorialComponent } from './pages/historial/historial.component';
 import { ModificarPrestamoComponent } from './pages/modificar-prestamo/modificar-prestamo.component';
 import { PagosPendientesComponent } from './pages/pagos-pendientes/pagos-pendientes.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { MainComponent } from './pages/main/main.component';
+import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
+import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'main', component: MainComponent},
+    {path: 'pagarprestamo', component: PagarPrestamoComponent},
+    {path: 'solicitar', component: SolicitarPrestamoComponent},
     {path: 'consultar', component: ConsultarPrestamosComponent},
     {path: 'eliminar', component: EliminarPrestamoComponent},
     {path: 'historial', component: HistorialComponent},
