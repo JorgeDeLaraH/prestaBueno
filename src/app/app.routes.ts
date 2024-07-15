@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
 import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
+import { register } from 'node:module';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path: 'historial', component: HistorialComponent},
     {path: 'modificar', component: ModificarPrestamoComponent},
     {path: 'pagos-pendientes', component: PagosPendientesComponent},
+    {path: 'register',component:RegisterComponent},
     {path: '**', redirectTo: 'login'}
 ];

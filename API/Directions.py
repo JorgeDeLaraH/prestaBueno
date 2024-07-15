@@ -1,9 +1,14 @@
+import os
+
+print("Current directory:", os.getcwd())
+print("Files in directory:", os.listdir(os.getcwd()))
+
 #Importacion de librerías
 from flask import Flask,jsonify,request
 from flask_cors import CORS, cross_origin
 import BackEnd.Functions as CallMethod
 import BackEnd.GlobalInfo.ResponseMessages as ResponseMessage
-
+import ssl
 #Instancia
 app=Flask(__name__)
 CORS(app,resources={r"/*":{"origins":"*"}})
@@ -21,6 +26,19 @@ def authPost():
         print("Error en auth",e)
         return jsonify(ResponseMessage.err500)
 
+@app.route('/register', methods=['POST'])
+@cross_origin(allow_headers=['Content-Type'])
+def registerUser():
+    try:
+        user=request.json['user']
+        password=request.json['password']
+        objectResult=CallMethod.fnRegisterUser(user,password)
+        return objectResult
+    except Exception as e:
+        print("Error en register direction")
+        return jsonify(ResponseMessage.err500)
+
+
 app.after_request
 def after_request(response):
   response.headers.add('Access-Control-Allow-Origin', 'http://localhost:4200')
@@ -30,5 +48,6 @@ def after_request(response):
   return response
 
 if __name__=='__main__':
-    
-    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
+    context=ssl.SSLContext(ssl.PROTOCOL_TLS)
+    context.load_cert_chain(certfile='./cert.pem', keyfile='./key.pem')
+    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True, ssl_context=context)
