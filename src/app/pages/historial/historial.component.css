@@ -1,0 +1,89 @@
+:root {
+    --navbar-color: #00796b; /* Verde primario */
+    --navbar-hover-color: #004d40; /* Verde oscuro */
+    --navbar-active-color: #4db6ac; /* Verde claro */
+    --navbar-visited-color: #b2dfdb; /* Verde suave */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #e0f2f1 !important; /* Color deseado para los enlaces */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: var(--navbar-hover-color);
+}
+
+.navbar-nav .nav-item .nav-link:active {
+    color: var(--navbar-active-color);
+}
+
+.navbar-nav .nav-item .nav-link:visited {
+    color: var(--navbar-visited-color);
+}
+
+  .light-text {
+    color: #e0f2f1;
+  }
+.col-md-6{
+    margin: 40px 0px;
+    padding-left: 30px;
+    padding-top: 25px;
+    border-radius: 30px;
+}
+
+.row{
+    margin-bottom: 25px;
+}
+
+.color-gris{
+    background-color: #cbdad9;
+}
+
+.color-1{
+    background-color: #e0f2f1;
+}
+
+.color-2{
+    background-color: #4db6ac;
+}
+
+.color-3{
+    background-color: #009688;
+}
+
+.color-4{
+    background-color: #00796b;
+}
+
+.color-5{
+    background-color: #004d40;
+}
+
+.contenido{
+    padding-left: 30px;
+    padding-bottom: 40px;
+}
+
+body{
+    background-color: #e0f2f1;
+}
+
+.btn-positivo{
+    background-color:#00796b;
+    color: #cbdad9;
+}
+
+.alert{
+    background-color:#b2dfdb;
+}
+
+p{
+    color: #e0f2f1;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+    width: 55px;
+    height: 44px;
+}

@@ -1,3 +1,5 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ConsultarPrestamosComponent } from './pages/consultar-prestamos/consultar-prestamos.component';
@@ -5,6 +7,8 @@ import { EliminarPrestamoComponent } from './pages/eliminar-prestamo/eliminar-pr
 import { HistorialComponent } from './pages/historial/historial.component';
 import { ModificarPrestamoComponent } from './pages/modificar-prestamo/modificar-prestamo.component';
 import { PagosPendientesComponent } from './pages/pagos-pendientes/pagos-pendientes.component';
+import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
+import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -13,5 +17,13 @@ export const routes: Routes = [
     {path: 'historial', component: HistorialComponent},
     {path: 'modificar', component: ModificarPrestamoComponent},
     {path: 'pagos-pendientes', component: PagosPendientesComponent},
+    {path: 'pagar', component: PagarPrestamoComponent},
+    {path: 'solicitar', component: SolicitarPrestamoComponent},
     {path: '**', redirectTo: 'login'}
 ];
+
+NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }
