@@ -14,4 +14,5 @@ export class PagosPendientesComponent {
   Consultar(){ this.router.navigate(['/consultar']); }
   Historial(){ this.router.navigate(['/historial']); }
   Pagar(){ this.router.navigate(['/pagos-pendientes']); }
+  PagarActual(){ this.router.navigate(['/pagar']); }
 }

@@ -68,6 +68,20 @@ body{
     background-color: #e0f2f1;
 }
 
+.btn-positivo{
+    background-color:#00796b;
+    color: #cbdad9;
+}
+
+.alert{
+    background-color:#b2dfdb;
+}
+
+.row{
+    padding-top: 15px;
+    margin-bottom: auto;
+}
+
 p{
     color: #e0f2f1;
     font-size: large;
