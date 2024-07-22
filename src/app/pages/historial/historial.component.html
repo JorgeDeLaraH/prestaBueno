@@ -1,22 +1,19 @@
 <nav class="navbar navbar-expand-lg color-2" style="margin-bottom: 60px;">
     <div class="container-fluid">
-        <a class="navbar-brand light-text" href="#">Presta Bueno</a>
+        <img src="../assets/img/logotipo.png" alt="logotipo" class="mx-2">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Ver prestamos</a>
+                    <a class="nav-link active" aria-current="page" (click)="Consultar()" >Ver prestamos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Mis prestamo</a>
+                    <a class="nav-link disaled" aria-current="page" (click)="Historial()"><strong>Mis prestamo</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Pagar prestamo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Pagos pendientes</a>
+                    <a class="nav-link active" aria-current="page" (click)="Pagar()" >Pagos pendientes</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -26,66 +23,92 @@
     </div>
 </nav>
 <div class="col-md-12 color-2 d-flex justify-content-center" style="height: 100%;">
-    <div class="col-md-12 color-3">
-        <div class="d-flex justify-content-center">
-            <h4>Historial</h4>
-        </div>   
-        <div class="d-flex justify-content-center m-2">
-            <div class="alert alert-secondary pb-0" role="alert">
-                <div class="row p-0">
-                    <div class="col-8">
-                        <div class="col-12">
-                            <div>Prestamo: $--</div>
-                            <div>Fecha: </div>
-                            <div>XX-XX-XXXX</div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12">
-                            <div>Estado:</div>
-                            <div>Pagado</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>   
-        <div class="d-flex justify-content-center m-2">
-            <div class="alert alert-secondary pb-0" role="alert">
-                <div class="row p-0">
-                    <div class="col-8">
-                        <div class="col-12">
-                            <div>Prestamo: $--</div>
-                            <div>Fecha: </div>
-                            <div>XX-XX-XXXX</div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12">
-                            <div>Estado:</div>
-                            <div>Pagado</div>
-                        </div>
+    <div class="col-md-12 color-2 d-flex justify-content-center">
+        <div class="container justify-content-center col-md-6 color-3">
+            <h4 class="d-flex justify-content-center">Mis Prestamos</h4>  
+            <div class="row d-flex justify-content-center overflow-auto border p-3" style="height: 425px;">
+                
+                <div class="d-flex justify-content-center">
+                    <div class="alert p-3 w-75" role="alert">
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-50">
+                                    <h4>$--</h4>
+                                    <h4>Fecha:</h4>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="w-50">
+                                    <h5>Estado:</h5>
+                                    <p class="text-success-emphasis">Pendiente</p>
+                                    <button type="button" class=" btn btn-positivo" (click)="PagarActual()">Pagar</button>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
-            </div>
-        </div>   
-        <div class="d-flex justify-content-center m-2">
-            <div class="alert alert-secondary pb-0" role="alert">
-                <div class="row p-0">
-                    <div class="col-8">
-                        <div class="col-12">
-                            <div>Prestamo: $--</div>
-                            <div>Fecha: </div>
-                            <div>XX-XX-XXXX</div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="col-12">
-                            <div>Estado:</div>
-                            <div>Pagado</div>
-                        </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="alert p-3 w-75" role="alert">
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-50">
+                                    <h4>$--</h4>
+                                    <h4>Fecha:</h4>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="w-50">
+                                    <h5>Estado:</h5>
+                                    <p class="text-success-emphasis">Pendiente</p>
+                                    <button type="button" class=" btn btn-positivo" (click)="PagarActual()">Pagar</button>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
-            </div>
+                
+                <div class="d-flex justify-content-center">
+                    <div class="alert p-3 w-75" role="alert">
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-50">
+                                    <h4>$--</h4>
+                                    <h4>Fecha:</h4>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="w-50">
+                                    <h5>Estado:</h5>
+                                    <p class="text-success-emphasis">Pendiente</p>
+                                    <button type="button" class=" btn btn-positivo" (click)="PagarActual()">Pagar</button>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <div class="alert p-3 w-75" role="alert">
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-50">
+                                    <h4>$--</h4>
+                                    <h4>Fecha:</h4>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="w-50">
+                                    <h5>Estado:</h5>
+                                    <p class="text-success-emphasis">Pendiente</p>
+                                    <button type="button" class=" btn btn-positivo" (click)="PagarActual()">Pagar</button>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+            </div>   
         </div>   
     </div>
 </div>

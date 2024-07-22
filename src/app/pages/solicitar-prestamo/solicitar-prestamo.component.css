@@ -31,6 +31,10 @@
     border-radius: 30px;
 }
 
+.color-gris{
+    background-color: #cbdad9;
+}
+
 .color-1{
     background-color: #e0f2f1;
 }
@@ -59,4 +63,9 @@ p{
     color: #e0f2f1;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+    width: 55px;
+    height: 44px;
 }

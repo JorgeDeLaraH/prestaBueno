@@ -1,3 +1,5 @@
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ConsultarPrestamosComponent } from './pages/consultar-prestamos/consultar-prestamos.component';
@@ -25,3 +27,9 @@ export const routes: Routes = [
     {path: 'register',component:RegisterComponent},
     {path: '**', redirectTo: 'login'}
 ];
+
+NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+  export class AppRoutingModule { }
