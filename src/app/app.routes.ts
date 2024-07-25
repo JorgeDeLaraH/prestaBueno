@@ -15,6 +15,7 @@ import { HistorialComponent } from './pages/historial/historial.component';
 import { PagosPendientesComponent } from './pages/pagos-pendientes/pagos-pendientes.component';
 import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
 import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
+import { CuentaComponent } from './pages/cuenta/cuenta.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -27,6 +28,7 @@ export const routes: Routes = [
     {path: 'admin-consultar', component: AdminConsultarPrestamosComponent},
     {path: 'admin-historiales', component: AdminHistorialesComponent},
     {path: 'admin-modificar', component: AdminModificarPrestamoComponent},
+    {path: 'cuenta', component: CuentaComponent},
     {path: '**', redirectTo: 'login'}
 ];
 
