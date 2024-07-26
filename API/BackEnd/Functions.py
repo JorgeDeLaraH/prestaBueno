@@ -2,11 +2,12 @@ import bcrypt
 from bson import ObjectId,json_util as j
 from flask import jsonify
 from pymongo import MongoClient
+from pymongo.server_api import ServerApi
 import BackEnd.GlobalInfo.ResponseMessages as ResponseMessage
 import BackEnd.GlobalInfo.Keys as ColabsKey
 
 if ColabsKey.dbconn==None:
-    mongoConnect=MongoClient(ColabsKey.strConnection)
+    mongoConnect=MongoClient(ColabsKey.strConnection,server_api=ServerApi('1'))
     ColabsKey.dbconn=mongoConnect[ColabsKey.strDBConnection]
     dbUsers=ColabsKey.dbconn["clUsers"]
     dbClients=ColabsKey.dbconn["clClients"]
