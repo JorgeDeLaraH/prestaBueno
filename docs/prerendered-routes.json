@@ -1,10 +1,17 @@
 {
   "routes": [
+    "/admin-agregar",
+    "/admin-consultar",
+    "/admin-historiales",
+    "/admin-modificar",
     "/consultar",
-    "/eliminar",
     "/historial",
     "/login",
-    "/modificar",
-    "/pagos-pendientes"
+    "/main",
+    "/pagar",
+    "/pagarprestamo",
+    "/pagos-pendientes",
+    "/register",
+    "/solicitar"
   ]
 }
