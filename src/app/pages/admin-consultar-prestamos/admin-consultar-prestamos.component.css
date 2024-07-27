@@ -68,6 +68,15 @@ body{
     background-color: #e0f2f1;
 }
 
+.btn-positivo{
+    background-color:#00796b;
+    color: #cbdad9;
+}
+
+.alert{
+    background-color:#b2dfdb;
+}
+
 p{
     color: #e0f2f1;
     font-size: large;
@@ -77,4 +86,8 @@ p{
 img{
     width: 55px;
     height: 44px;
+}
+
+.btn-eliminar{
+    background-color: rgb(252, 95, 95);
 }

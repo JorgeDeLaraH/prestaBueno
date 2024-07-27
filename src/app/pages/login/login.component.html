@@ -7,7 +7,7 @@
           </div>
   
           <div class="card-body">
-            <form class="forms">
+            <form class="forms" (submit)="login()">
               <h2 class="mb-4 text-center fw-bold fs-3">Iniciar Sesión</h2>
   
               <div class="form-group">
@@ -24,7 +24,7 @@
               </div>
   
               <div class="d-grid gap-2 col-6 mx-auto mt-3 mb-4">
-                <button type="submit" class="btn btn-dark fs-5" (click)="alerta1()">Iniciar Sesión</button>
+                <button type="submit" class="btn btn-dark fs-5">Iniciar Sesión</button>
               </div>
   
             </form>
