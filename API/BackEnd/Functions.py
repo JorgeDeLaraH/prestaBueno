@@ -1,5 +1,4 @@
 import bcrypt
-from bson import ObjectId,json_util as j
 from flask import jsonify
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
@@ -53,3 +52,12 @@ def fnRegisterUser(user,password):
             return jsonify(objResponse)
     except Exception as e:
         return jsonify(e)
+
+def fnPruebaDeploy():
+    try:
+        objResponse = ResponseMessage.succ200.copy()
+        objResponse['Estatus_Acreditado'] = True
+        return jsonify(objResponse)
+    except Exception as e:
+        objResponse=ResponseMessage.err500
+        return jsonify(objResponse,e)
