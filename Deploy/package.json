@@ -1,0 +1,20 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nguniversal/express-engine": "^16.2.0",
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "zone.js":"^0.11.4"
+  }
+}
