@@ -32,8 +32,14 @@ export class LoginComponent implements OnInit{
       this.authService.authPost(this.credenciales).subscribe((res:any)=>{
         if(res.Estatus_Acreditado==true){
           console.log(res)
-          localStorage.setItem('key',res.prueba);
-          this.router.navigate(['main']);
+          if(res.Rol=='user'){
+            localStorage.setItem('key',res.Prueba);
+            this.router.navigate(['solicitar']);
+          }else{
+            localStorage.setItem('key',res.Prueba);
+            this.router.navigate(['admin-consultar']);
+          }
+          
         }else{
           this.alerta.alerta('Credenciales Invalidas','Por favor verifica tus credenciales','error','Regresar');
         }

@@ -34,7 +34,7 @@ export const routes: Routes = [
     {path: 'admin-consultar', component: AdminConsultarPrestamosComponent},
     {path: 'admin-historiales', component: AdminHistorialesComponent},
     {path: 'admin-modificar', component: AdminModificarPrestamoComponent},
-    {path: '**', redirectTo: 'login'}
+    {path: '**', redirectTo: 'register'}
 ];
 
 NgModule({

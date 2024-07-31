@@ -1,4 +1,5 @@
 import bcrypt
+from bson import ObjectId
 from flask import jsonify
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
@@ -23,12 +24,13 @@ def fnAuthPost(user,password):
     try:
         print("Comprobacion de credenciales")
         objQuery=dbUsers.find_one({"strUser":user})
-        id=str(objQuery.get('_id'))
         if objQuery and check_password(objQuery.get('strPassword'),password):
             id = str(objQuery.get('_id'))
+            rol=objQuery.get('strRole')
             objResponse = ResponseMessage.succ200.copy()
             objResponse['Prueba'] = id
             objResponse['Estatus_Acreditado'] = True
+            objResponse['Rol']=rol
             return jsonify(objResponse)
     except Exception as e:
         objResponse=ResponseMessage.err500
@@ -38,7 +40,6 @@ def fnAuthPost(user,password):
 def fnRegisterUser(user,password):
     try:
         objectQuery=dbUsers.find_one({"strUser":user})
-        print(objectQuery)
         if objectQuery and objectQuery.get('strUser')==user:
             objResponse=ResponseMessage.err203
             objResponse['Estado']=False
@@ -61,3 +62,17 @@ def fnPruebaDeploy():
     except Exception as e:
         objResponse=ResponseMessage.err500
         return jsonify(objResponse,e)
+    
+def fngetUser(id):
+    objResponse={}
+    try:
+        objectQuery=dbUsers.find_one({"_id":ObjectId(id)})
+        if objectQuery:
+            objResponse=ResponseMessage.succ200
+            objResponse['Nombre']=objectQuery.get('strUser')
+            return jsonify(objResponse)
+        else:
+            objResponse['mensaje']=ResponseMessage.err205
+            return jsonify(objResponse)
+    except Exception as e:
+        return jsonify(e)

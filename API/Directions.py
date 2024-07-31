@@ -4,7 +4,6 @@ from flask import Flask,jsonify,request
 from flask_cors import CORS, cross_origin
 import BackEnd.Functions as CallMethod
 import BackEnd.GlobalInfo.ResponseMessages as ResponseMessage
-import ssl
 #Instancia
 app=Flask(__name__)
 CORS(app,resources={r"/*":{"origins":"*"}})
@@ -50,6 +49,16 @@ def registerUser():
         print("Error en register direction")
         return jsonify(ResponseMessage.err500)
 
+@app.route('/getUser/<id>', methods=['GET'])
+@cross_origin(allow_headers=['Content-Type'])
+def getUser(id):
+    try:
+        objectResult=CallMethod.fngetUser(id)
+        return objectResult
+    except Exception as e:
+        print("Error en getUser",e)
+        return jsonify(ResponseMessage.err500)
+
 
 app.after_request
 def after_request(response):
@@ -63,5 +72,5 @@ if __name__=='__main__':
     #context=ssl.SSLContext(ssl.PROTOCOL_TLS)
     #context.load_cert_chain(certfile='./cert.pem', keyfile='./key.pem')
     #, port=5000, debug=True, threaded=True
-    port=int(os.environ.get("PORT",500))
-    app.run(host="0.0.0.0", port=port)
+    port=int(os.environ.get("PORT",5000))
+    app.run(host="0.0.0.0", port=5000,debug=True, threaded=True)
