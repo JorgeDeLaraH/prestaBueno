@@ -18,9 +18,11 @@ import { MainComponent } from './pages/main/main.component';
 import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
 import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
 import { register } from 'node:module';
+import { CuentaComponent } from './pages/cuenta/cuenta.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
+    {path: 'cuenta', component:CuentaComponent},
     {path: 'register', component: RegisterComponent},
     {path: 'main', component: MainComponent},
     {path: 'pagarprestamo', component: PagarPrestamoComponent},
