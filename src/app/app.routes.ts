@@ -17,7 +17,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { PagarPrestamoComponent } from './pages/pagar-prestamo/pagar-prestamo.component';
 import { SolicitarPrestamoComponent } from './pages/solicitar-prestamo/solicitar-prestamo.component';
-import { register } from 'node:module';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
 
 export const routes: Routes = [
@@ -39,8 +38,4 @@ export const routes: Routes = [
     {path: '**', redirectTo: 'register'}
 ];
 
-NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
   export class AppRoutingModule { }
