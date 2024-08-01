@@ -37,5 +37,3 @@ export const routes: Routes = [
     {path: 'admin-modificar', component: AdminModificarPrestamoComponent},
     {path: '**', redirectTo: 'register'}
 ];
-
-  export class AppRoutingModule { }
