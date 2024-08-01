@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit{
             localStorage.setItem('key',res.Prueba);
             this.router.navigate(['admin-consultar']);
           }
-          
         }else{
           this.alerta.alerta('Credenciales Invalidas','Por favor verifica tus credenciales','error','Regresar');
         }
